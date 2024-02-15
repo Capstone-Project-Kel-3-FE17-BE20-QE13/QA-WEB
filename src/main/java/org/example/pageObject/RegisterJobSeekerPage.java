@@ -1,5 +1,6 @@
 package org.example.pageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +34,8 @@ public class RegisterJobSeekerPage {
     private WebElement registerButton;
     @FindBy(xpath = "//h1[@class='text-2xl font-semibold mb-4']")
     private WebElement masukLabel;
+    @FindBy(xpath = "//div[@class='swal2-html-container']")
+    private WebElement emailHasBeenRegisteredMessage;
 
     public boolean verifyJobHuntzLabel () {
         return jobHuntzLabel.isDisplayed();
@@ -58,7 +61,7 @@ public class RegisterJobSeekerPage {
     }
 
     public void inputEmailField (String email) {
-        fullNameField.sendKeys(email);
+        emailField.sendKeys(email);
     }
 
     public void inputUserNameField (String username) {
@@ -75,5 +78,25 @@ public class RegisterJobSeekerPage {
 
     public boolean verifyLoginPage () {
         return masukLabel.isDisplayed();
+    }
+
+//    public boolean verifyEmailDuplicateMessage () {
+////        String locatorMessage = "//div[@id='swal2-html-container']";
+//        String locatorMessage = "//div[@class='swal2-html-container']";
+//        return webDriver.findElement(By.xpath(locatorMessage)).isDisplayed();
+//    }
+//
+//    public boolean verifyEmailHasBeenUsed (String message) {
+//        String locatorMessage = "//div[contains(text(), '" + message + "')]";
+//        return webDriver.findElement(By.xpath(locatorMessage)).isDisplayed();
+//    }
+
+    public String getEmailHasBeenRegisteredMessage () {
+        return emailHasBeenRegisteredMessage.getText();
+    }
+
+    public boolean fieldRequiredMessage (String message) {
+        String fieldRequired = "//p[contains(text(),'" + message + "')]";
+        return webDriver.findElement(By.xpath(fieldRequired)).isDisplayed();
     }
 }
