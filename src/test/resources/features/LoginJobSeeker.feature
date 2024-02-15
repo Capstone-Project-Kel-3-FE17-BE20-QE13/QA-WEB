@@ -40,7 +40,6 @@ Feature: Login Job Seeker
       |                      | 123456789 | email is required                      |
       |                      |           | email is required                      |
 
-  @TC
   Scenario Outline: Login job seeker with invalid email
     Given User already on JobHuntz web
     When User click Daftar button
