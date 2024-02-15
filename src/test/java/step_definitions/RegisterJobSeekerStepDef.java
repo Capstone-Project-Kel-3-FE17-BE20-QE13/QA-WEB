@@ -8,6 +8,8 @@ import org.example.pageObject.RegisterJobSeekerPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class RegisterJobSeekerStepDef {
     private final WebDriver driver = Hooks.driver;
     RegisterJobSeekerPage registerJobSeekerPage = new RegisterJobSeekerPage(driver);
@@ -28,7 +30,7 @@ public class RegisterJobSeekerStepDef {
         registerJobSeekerPage.clickCandidateSignUpButton();
     }
 
-    @Then("User will redirected to candidate sign up button")
+    @Then("User will be redirected to candidate sign up button")
     public void userWillRedirectedToCandidateSignUpButton() {
         Assert.assertTrue(registerJobSeekerPage.verifyCandidateSignUpPage());
     }
@@ -44,12 +46,32 @@ public class RegisterJobSeekerStepDef {
     @And("User click Register button")
     public void userClickRegisterButton() {
         registerJobSeekerPage.clickRegisterButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
-    @Then("User will be redirected to login page")
-    public void userWillBeRedirectedToLoginPage() {
+    @Then("User will see message successfully registered")
+    public void userWillBeSeeMessageSuccessfullyRegistered() {
+        registerJobSeekerPage.verifyLoginPage();
     }
 
+//    @Then("User will see message Email sudah terdaftar")
+//    public void userWillSeeMessage() {
+//        registerJobSeekerPage.verifyEmailDuplicateMessage();
+//    }
 
+    @Then("User will see message {string}")
+    public void userWillSeeMessage(String message) {
+        Assert.assertEquals(registerJobSeekerPage.getEmailHasBeenRegisteredMessage(), message);
+    }
 
+    @Then("User will see message under the field {string}")
+    public void userWillSeeMessageUnderTheField(String message) {
+        Assert.assertTrue(registerJobSeekerPage.fieldRequiredMessage(message));
+    }
+
+    @And("User click Register button with valid input")
+    public void userClickRegisterButtonWithValidInput() {
+        registerJobSeekerPage.clickRegisterButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+    }
 }
