@@ -40,3 +40,16 @@ Feature: Register Job Seeker
       | candidate delapan | candidate8@gmail.com |          | candidate8 | username is required                   |
       | candidate delapan | candidate8@gmail.com | candi8   |            | Password must be at least 6 characters |
       |                   |                      |          |            | name is required                       |
+
+  @TC
+  Scenario Outline: Register new job seeker with invalid email
+    Given User already on JobHuntz web
+    When User click Daftar button
+    And User click Candidate Sign Up button
+    Then User will be redirected to candidate sign up button
+    When User input "<full_name>", "<email>", "<username>", and "<password>"
+    And User click Register button
+    Then User is required to enter a valid email to register
+    Examples:
+      | full_name         | email      | username   | password   |
+      | candidate delapan | candidate8 | candidate8 | candidate8 |

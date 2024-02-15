@@ -38,4 +38,9 @@ public class LoginJobSeekerStepDef {
     public void userWillSuccessfullyLogin() {
         loginJobSeekerPage.verifySuccessLogin();
     }
+
+    @Then("User is required to enter a valid email to login")
+    public void userIsRequiredToEnterAValidEmailToLogin() {
+        loginJobSeekerPage.verifyLoginPage();
+    }
 }

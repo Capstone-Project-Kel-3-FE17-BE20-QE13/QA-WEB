@@ -35,7 +35,7 @@ public class RegisterJobSeekerPage {
     @FindBy(xpath = "//h1[@class='text-2xl font-semibold mb-4']")
     private WebElement masukLabel;
     @FindBy(xpath = "//div[@class='swal2-html-container']")
-    private WebElement emailHasBeenRegisteredMessage;
+    private WebElement popUpMessage;
 
     public boolean verifyJobHuntzLabel () {
         return jobHuntzLabel.isDisplayed();
@@ -91,8 +91,8 @@ public class RegisterJobSeekerPage {
 //        return webDriver.findElement(By.xpath(locatorMessage)).isDisplayed();
 //    }
 
-    public String getEmailHasBeenRegisteredMessage () {
-        return emailHasBeenRegisteredMessage.getText();
+    public String getPopUpMessage () {
+        return popUpMessage.getText();
     }
 
     public boolean fieldRequiredMessage (String message) {
