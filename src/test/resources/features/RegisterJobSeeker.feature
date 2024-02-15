@@ -1,23 +1,24 @@
 @RegisterJobSeeker
 Feature: Register Job Seeker
 
+  @TC
   Scenario Outline: Register new job seeker with valid input
     Given User already on JobHuntz web
     When User click Daftar button
     And User click Candidate Sign Up button
-    Then User will be redirected to candidate sign up button
+    Then User will be redirected to candidate sign up page
     When User input "<full_name>", "<email>", "<username>", and "<password>"
     And User click Register button with valid input
     Then User will see message successfully registered
     Examples:
-      | full_name    | email              | username  | password   |
-      | miranti nisa | nisamir1@gmail.com | nisamir29 | nisaMIR345 |
+      | full_name          | email                | username   | password |
+      | candidate sembilan | candidate9@gmail.com | candidate9 | 12345678 |
 
   Scenario Outline: Register new job seeker with duplicate email
     Given User already on JobHuntz web
     When User click Daftar button
     And User click Candidate Sign Up button
-    Then User will be redirected to candidate sign up button
+    Then User will be redirected to candidate sign up page
     When User input "<full_name>", "<email>", "<username>", and "<password>"
     And User click Register button
     Then User will see message "Email sudah terdaftar"
@@ -29,7 +30,7 @@ Feature: Register Job Seeker
     Given User already on JobHuntz web
     When User click Daftar button
     And User click Candidate Sign Up button
-    Then User will be redirected to candidate sign up button
+    Then User will be redirected to candidate sign up page
     When User input "<full_name>", "<email>", "<username>", and "<password>"
     And User click Register button
     Then User will see message under the field "<message>"
@@ -41,12 +42,11 @@ Feature: Register Job Seeker
       | candidate delapan | candidate8@gmail.com | candi8   |            | Password must be at least 6 characters |
       |                   |                      |          |            | name is required                       |
 
-  @TC
   Scenario Outline: Register new job seeker with invalid email
     Given User already on JobHuntz web
     When User click Daftar button
     And User click Candidate Sign Up button
-    Then User will be redirected to candidate sign up button
+    Then User will be redirected to candidate sign up page
     When User input "<full_name>", "<email>", "<username>", and "<password>"
     And User click Register button
     Then User is required to enter a valid email to register

@@ -28,9 +28,10 @@ public class RegisterJobSeekerStepDef {
     @And("User click Candidate Sign Up button")
     public void userClickCandidateSignUpButton() {
         registerJobSeekerPage.clickCandidateSignUpButton();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
-    @Then("User will be redirected to candidate sign up button")
+    @Then("User will be redirected to candidate sign up page")
     public void userWillRedirectedToCandidateSignUpButton() {
         Assert.assertTrue(registerJobSeekerPage.verifyCandidateSignUpPage());
     }
