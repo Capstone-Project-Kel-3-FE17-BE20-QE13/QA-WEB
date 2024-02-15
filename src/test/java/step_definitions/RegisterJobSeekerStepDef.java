@@ -61,7 +61,7 @@ public class RegisterJobSeekerStepDef {
 
     @Then("User will see message {string}")
     public void userWillSeeMessage(String message) {
-        Assert.assertEquals(registerJobSeekerPage.getEmailHasBeenRegisteredMessage(), message);
+        Assert.assertEquals(registerJobSeekerPage.getPopUpMessage(), message);
     }
 
     @Then("User will see message under the field {string}")
@@ -73,5 +73,10 @@ public class RegisterJobSeekerStepDef {
     public void userClickRegisterButtonWithValidInput() {
         registerJobSeekerPage.clickRegisterButton();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+    }
+
+    @Then("User is required to enter a valid email to register")
+    public void userIsRequiredToEnterAValidEmail() {
+        registerJobSeekerPage.verifyCandidateSignUpPage();
     }
 }
