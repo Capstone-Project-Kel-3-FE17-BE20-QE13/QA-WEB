@@ -31,6 +31,7 @@ public class LoginJobSeekerPage {
     }
 
     public boolean verifyLoginPage () {
+
         return loginCandidateLabel.isDisplayed();
     }
 

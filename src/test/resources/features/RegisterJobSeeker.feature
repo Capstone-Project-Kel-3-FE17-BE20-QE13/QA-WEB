@@ -26,6 +26,7 @@ Feature: Register Job Seeker
       | full_name    | email            | username  | password   |
       | nisa miranti | tes123@gmail.com | nisamir39 | nisaMIR345 |
 
+  @TC
   Scenario Outline: Register new job seeker with empty field
     Given User already on JobHuntz web
     When User click Daftar button
