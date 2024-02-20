@@ -1,3 +1,4 @@
+@JobSeekerCareer
 Feature: Job seeker career
 
   Scenario Outline: Post job seeker career

@@ -1,7 +1,6 @@
 @LoginCompany
 Feature: Login Company
 
-  @TC1
   Scenario Outline: Login company with valid input
     Given User already on JobHuntz web
     When User click Daftar button

@@ -14,6 +14,32 @@ Feature: Register Company
       | full_name          | email               | password  | company_name | company_type  | website               | company_size    |
       | company tiga puluh | company30@gmail.com | 123456789 | PT Company   | IT Consultant | https://company30.com | 1-250 employees |
 
+  Scenario Outline: Register company with password equals to 8 characters
+    Given User already on JobHuntz web
+    When User click Daftar button
+    And User click Employee Hiring button
+    Then User will be redirected to Company Sign Up page
+    When User input full name "<full_name>", email "<email>", password "<password>", company name "<company_name>", company type "<company_type>", and website "<website>"
+    And User choose company size "<company_size>"
+    And User click Register button for register company
+    Then User will successfully registered
+    Examples:
+      | full_name          | email               | password | company_name | company_type  | website               | company_size    |
+      | company tiga puluh | company30@gmail.com | 12345678 | PT Company   | IT Consultant | https://company30.com | 1-250 employees |
+
+  Scenario Outline: Register company with password more than 8 characters
+    Given User already on JobHuntz web
+    When User click Daftar button
+    And User click Employee Hiring button
+    Then User will be redirected to Company Sign Up page
+    When User input full name "<full_name>", email "<email>", password "<password>", company name "<company_name>", company type "<company_type>", and website "<website>"
+    And User choose company size "<company_size>"
+    And User click Register button for register company
+    Then User will successfully registered
+    Examples:
+      | full_name          | email               | password  | company_name | company_type  | website               | company_size    |
+      | company tiga puluh | company30@gmail.com | 123456789 | PT Company   | IT Consultant | https://company30.com | 1-250 employees |
+
   Scenario Outline: Register company with invalid input
     Given User already on JobHuntz web
     When User click Daftar button

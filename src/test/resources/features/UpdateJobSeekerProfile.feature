@@ -1,6 +1,6 @@
+@UpdateJobSeekerProfile
 Feature: Update job seeker profile
 
-  @TC
   Scenario Outline: Update job seeker profile name, address, password, and phone
     Given User already on JobHuntz web
     When User click Daftar button

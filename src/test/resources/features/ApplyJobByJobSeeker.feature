@@ -1,3 +1,4 @@
+@ApplyJobByJobSeeker
 Feature: Apply job by job seeker
 
   Scenario Outline: Apply job by job seeker
