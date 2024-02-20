@@ -54,10 +54,8 @@ public class LoginJobSeekerPage {
         return lowonganTerkiniLabel.isDisplayed();
     }
 
-<<<<<<< Updated upstream
     public boolean verifyPopUpMessage () {
         return popUpMessage.isDisplayed();
     }
-=======
->>>>>>> Stashed changes
+
 }

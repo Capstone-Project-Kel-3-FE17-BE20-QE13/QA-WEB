@@ -47,9 +47,9 @@ public class LoginCompanyPage {
     @FindBy(xpath = "//input[@value='Tambah']")
     private WebElement buttonTambahLowongan;
 
-    public boolean verifyPopUpSuccess(){
-        return containerProfilCompany.isDisplayed();
-    }
+//    public boolean verifyPopUpSuccess(){
+//        return successPopUp.isDisplayed();
+//    }
     public boolean verifyProfileCompany(){
         return containerProfilCompany.isDisplayed();
     }
