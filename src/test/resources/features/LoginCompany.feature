@@ -27,7 +27,6 @@ Feature: Login Company
       |                    | 123456789 | email is required                      |
       |                    |           | email is required                      |
 
-  @TC
   Scenario Outline: Login job seeker with wrong input
     Given User already on JobHuntz web
     When User click Daftar button
