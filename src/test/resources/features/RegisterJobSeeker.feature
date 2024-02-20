@@ -13,6 +13,30 @@ Feature: Register Job Seeker
       | full_name            | email                 | username   | password |
       | candidate tiga puluh | candidate30@gmail.com | candidate30 | 12345678 |
 
+  Scenario Outline: Register new job seeker with password equals 8 characters
+    Given User already on JobHuntz web
+    When User click Daftar button
+    And User click Candidate Sign Up button
+    Then User will be redirected to candidate sign up page
+    When User input "<full_name>", "<email>", "<username>", and "<password>"
+    And User click Register button with valid input
+    Then User will see message successfully registered
+    Examples:
+      | full_name            | email                 | username   | password |
+      | candidate tiga puluh | candidate30@gmail.com | candidate30 | 12345678 |
+
+  Scenario Outline: Register new job seeker with password more than 8 characters
+    Given User already on JobHuntz web
+    When User click Daftar button
+    And User click Candidate Sign Up button
+    Then User will be redirected to candidate sign up page
+    When User input "<full_name>", "<email>", "<username>", and "<password>"
+    And User click Register button with valid input
+    Then User will see message successfully registered
+    Examples:
+      | full_name            | email                 | username    | password  |
+      | candidate tiga puluh | candidate30@gmail.com | candidate30 | 123456789 |
+
   Scenario Outline: Register new job seeker with duplicate email
     Given User already on JobHuntz web
     When User click Daftar button
@@ -40,6 +64,7 @@ Feature: Register Job Seeker
       | candidate delapan | candidate8@gmail.com |          | candidate8 | username is required                   |
       | candidate delapan | candidate8@gmail.com | candi8   |            | Password must be at least 8 characters |
       |                   |                      |          |            | name is required                       |
+      | candidate delapan | candidate8@gmail.com | candi8   | andi       | Password must be at least 8 characters |
 
   Scenario Outline: Register new job seeker with invalid email
     Given User already on JobHuntz web

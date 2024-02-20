@@ -35,7 +35,8 @@ public class ApplyJobByJobSeekerStepDef {
     }
 
     @Then("User will see message lowongan berhasil dilamar")
-    public void userWillSeeMessageLowonganBerhasilDilamar() {
+    public void userWillSeeMessageLowonganBerhasilDilamar() throws InterruptedException {
+        Thread.sleep(5000);
         Assert.assertTrue(applyJobPage.verifyPopUpMessage());
     }
 }

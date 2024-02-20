@@ -1,5 +1,6 @@
 Feature: Add vacancy to favorite
 
+  @TC
   Scenario Outline: Add vacancy to favorite
     Given User already on JobHuntz web
     When User click Daftar button

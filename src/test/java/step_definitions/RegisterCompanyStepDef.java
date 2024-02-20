@@ -19,7 +19,8 @@ public class RegisterCompanyStepDef {
     }
 
     @Then("User will be redirected to Company Sign Up page")
-    public void userWillBeRedirectedToCompanySignUpPage() {
+    public void userWillBeRedirectedToCompanySignUpPage() throws InterruptedException {
+        Thread.sleep(3000);
         Assert.assertTrue(registerCompanyPage.verifyCompanySignUpPage());
     }
 
