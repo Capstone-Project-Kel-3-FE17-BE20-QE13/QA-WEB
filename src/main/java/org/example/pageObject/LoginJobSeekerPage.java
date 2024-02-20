@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import sun.awt.windows.WBufferStrategy;
 
 public class LoginJobSeekerPage {
     public static WebDriver webDriver;
@@ -27,6 +28,7 @@ public class LoginJobSeekerPage {
     private WebElement lowonganTerkiniLabel;
     @FindBy(xpath = "//div[@class='swal2-html-container']")
     private WebElement popUpMessage;
+
 
     public void clickMasukButton () {
         masukButton.click();
@@ -52,7 +54,10 @@ public class LoginJobSeekerPage {
         return lowonganTerkiniLabel.isDisplayed();
     }
 
+<<<<<<< Updated upstream
     public boolean verifyPopUpMessage () {
         return popUpMessage.isDisplayed();
     }
+=======
+>>>>>>> Stashed changes
 }

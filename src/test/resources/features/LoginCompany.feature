@@ -1,6 +1,7 @@
 @LoginCompany
 Feature: Login Company
 
+  @TC1
   Scenario Outline: Login company with valid input
     Given User already on JobHuntz web
     When User click Daftar button
@@ -39,3 +40,16 @@ Feature: Login Company
       | email              | password  |
       | company6@gmail.com | abcabcdf  |
       | comp6@gmail.com    | 123456789 |
+
+    Then User will successfully login company
+    When User click photo profile
+    And User click button daftar lowongan
+    And User click button add
+    And User input "<posisi>" as nama posisi, "<jobType>" as tipe kerjaan, "<address>" as alamat, "<gaji>" as estimasi gaji
+    And User click bidang pekerjaan and chose 1
+    And User click tambah lowongan button
+    Then User will see success tambah lowongan
+    Examples:
+      | email               | password  | posisi | jobType | address | gaji   |
+      | testes123@gmail.com | 123456789 | IT     | IT      | Malang  | 100000 |
+
