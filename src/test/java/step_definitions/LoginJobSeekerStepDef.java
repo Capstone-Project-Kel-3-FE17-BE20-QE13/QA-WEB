@@ -39,6 +39,7 @@ public class LoginJobSeekerStepDef {
     @Then("User will successfully login")
     public void userWillSuccessfullyLogin() {
         Assert.assertTrue(loginJobSeekerPage.verifySuccessLogin());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 
     @Then("User is required to enter a valid email to login")

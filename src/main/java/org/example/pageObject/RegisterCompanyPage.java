@@ -84,9 +84,6 @@ public class RegisterCompanyPage {
         registerButtonCompany.click();
     }
 
-    public boolean verifyLoginCompanyPage () {
-        return loginCompanyLabel.isDisplayed();
-    }
 
     public boolean fieldRequiredMessage (String message) {
         String fieldRequired = "//p[contains(text(),'" + message + "')]";
