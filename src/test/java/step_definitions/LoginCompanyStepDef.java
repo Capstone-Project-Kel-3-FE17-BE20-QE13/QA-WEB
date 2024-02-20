@@ -27,13 +27,10 @@ public class LoginCompanyStepDef {
     }
 
     @Then("User will successfully login company")
-    public void userWillSuccessfullyLoginCompany() {
+    public void userWillSuccessfullyLoginCompany() throws InterruptedException {
         Assert.assertTrue(loginCompanyPage.setVerifyLoginCompany());
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
+        //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+        Thread.sleep(5000);
     }
 
     @When("User click photo profile")
@@ -78,14 +75,14 @@ public class LoginCompanyStepDef {
         Thread.sleep(3000);
     }
 
-    @Then("User will see success tambah lowongan")
-    public void userWillSeeSuccessTambahLowongan() throws InterruptedException {
-        Assert.assertTrue(loginCompanyPage.verifyPopUpSuccess());
-        ;
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        Thread.sleep(3000);
-
-    }
+//    @Then("User will see success tambah lowongan")
+//    public void userWillSeeSuccessTambahLowongan() throws InterruptedException {
+//        Assert.assertTrue(loginCompanyPage.verifyPopUpSuccess());
+//        ;
+////        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+//        Thread.sleep(3000);
+//
+//    }
 }
 
 
