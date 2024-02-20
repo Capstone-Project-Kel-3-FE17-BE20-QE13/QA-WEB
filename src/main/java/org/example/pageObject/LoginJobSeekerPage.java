@@ -25,13 +25,14 @@ public class LoginJobSeekerPage {
     private WebElement loginButton;
     @FindBy(xpath = "//h1[@class='text-2xl font-bold']")
     private WebElement lowonganTerkiniLabel;
+    @FindBy(xpath = "//div[@class='swal2-html-container']")
+    private WebElement popUpMessage;
 
     public void clickMasukButton () {
         masukButton.click();
     }
 
     public boolean verifyLoginPage () {
-
         return loginCandidateLabel.isDisplayed();
     }
 
@@ -49,5 +50,9 @@ public class LoginJobSeekerPage {
 
     public boolean verifySuccessLogin () {
         return lowonganTerkiniLabel.isDisplayed();
+    }
+
+    public boolean verifyPopUpMessage () {
+        return popUpMessage.isDisplayed();
     }
 }

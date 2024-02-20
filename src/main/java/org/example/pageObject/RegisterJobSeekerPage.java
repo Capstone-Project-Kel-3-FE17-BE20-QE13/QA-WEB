@@ -80,17 +80,6 @@ public class RegisterJobSeekerPage {
         return masukLabel.isDisplayed();
     }
 
-//    public boolean verifyEmailDuplicateMessage () {
-////        String locatorMessage = "//div[@id='swal2-html-container']";
-//        String locatorMessage = "//div[@class='swal2-html-container']";
-//        return webDriver.findElement(By.xpath(locatorMessage)).isDisplayed();
-//    }
-//
-//    public boolean verifyEmailHasBeenUsed (String message) {
-//        String locatorMessage = "//div[contains(text(), '" + message + "')]";
-//        return webDriver.findElement(By.xpath(locatorMessage)).isDisplayed();
-//    }
-
     public String getPopUpMessage () {
         return popUpMessage.getText();
     }
@@ -98,5 +87,9 @@ public class RegisterJobSeekerPage {
     public boolean fieldRequiredMessage (String message) {
         String fieldRequired = "//p[contains(text(),'" + message + "')]";
         return webDriver.findElement(By.xpath(fieldRequired)).isDisplayed();
+    }
+
+    public boolean verifyPopUpMessage () {
+        return popUpMessage.isDisplayed();
     }
 }

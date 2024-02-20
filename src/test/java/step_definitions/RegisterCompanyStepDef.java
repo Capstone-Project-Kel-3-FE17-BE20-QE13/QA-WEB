@@ -20,7 +20,7 @@ public class RegisterCompanyStepDef {
 
     @Then("User will be redirected to Company Sign Up page")
     public void userWillBeRedirectedToCompanySignUpPage() {
-        registerCompanyPage.verifyCompanySignUpPage();
+        Assert.assertTrue(registerCompanyPage.verifyCompanySignUpPage());
     }
 
     @When("User input full name {string}, email {string}, password {string}, company name {string}, company type {string}, and website {string}")
@@ -46,7 +46,7 @@ public class RegisterCompanyStepDef {
 
     @Then("User will successfully registered")
     public void userWillSuccessfullyRegistered() {
-        registerCompanyPage.verifyLoginCompanyPage();
+        Assert.assertTrue(registerCompanyPage.verifyPopUpMessage());
     }
 
     @Then("User will see message below the field {string}")
@@ -56,6 +56,6 @@ public class RegisterCompanyStepDef {
 
     @Then("User will see error message duplicate email")
     public void userWillSeeErrorMessageDuplicateEmail() {
-        registerCompanyPage.verifyPopUpMessage();
+        Assert.assertTrue(registerCompanyPage.verifyPopUpMessage());
     }
 }

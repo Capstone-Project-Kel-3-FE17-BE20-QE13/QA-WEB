@@ -52,13 +52,8 @@ public class RegisterJobSeekerStepDef {
 
     @Then("User will see message successfully registered")
     public void userWillBeSeeMessageSuccessfullyRegistered() {
-        registerJobSeekerPage.verifyLoginPage();
+        Assert.assertTrue(registerJobSeekerPage.verifyPopUpMessage());
     }
-
-//    @Then("User will see message Email sudah terdaftar")
-//    public void userWillSeeMessage() {
-//        registerJobSeekerPage.verifyEmailDuplicateMessage();
-//    }
 
     @Then("User will see message {string}")
     public void userWillSeeMessage(String message) {
@@ -78,6 +73,6 @@ public class RegisterJobSeekerStepDef {
 
     @Then("User is required to enter a valid email to register")
     public void userIsRequiredToEnterAValidEmail() {
-        registerJobSeekerPage.verifyCandidateSignUpPage();
+        Assert.assertTrue(registerJobSeekerPage.verifyCandidateSignUpPage());
     }
 }

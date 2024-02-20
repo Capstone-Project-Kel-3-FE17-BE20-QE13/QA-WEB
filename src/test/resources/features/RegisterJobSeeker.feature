@@ -10,10 +10,9 @@ Feature: Register Job Seeker
     And User click Register button with valid input
     Then User will see message successfully registered
     Examples:
-      | full_name          | email                | username   | password |
-      | candidate sembilan | candidate9@gmail.com | candidate9 | 12345678 |
+      | full_name            | email                 | username   | password |
+      | candidate tiga puluh | candidate30@gmail.com | candidate30 | 12345678 |
 
-  @TC
   Scenario Outline: Register new job seeker with duplicate email
     Given User already on JobHuntz web
     When User click Daftar button
@@ -26,7 +25,6 @@ Feature: Register Job Seeker
       | full_name    | email            | username  | password   |
       | nisa miranti | tes123@gmail.com | nisamir39 | nisaMIR345 |
 
-  @TC
   Scenario Outline: Register new job seeker with empty field
     Given User already on JobHuntz web
     When User click Daftar button
@@ -43,7 +41,6 @@ Feature: Register Job Seeker
       | candidate delapan | candidate8@gmail.com | candi8   |            | Password must be at least 8 characters |
       |                   |                      |          |            | name is required                       |
 
-  @TC
   Scenario Outline: Register new job seeker with invalid email
     Given User already on JobHuntz web
     When User click Daftar button
