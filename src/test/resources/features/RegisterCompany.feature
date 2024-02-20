@@ -11,8 +11,8 @@ Feature: Register Company
     And User click Register button for register company
     Then User will successfully registered
     Examples:
-      | full_name    | email              | password  | company_name | company_type  | website              | company_size    |
-      | company enam | company6@gmail.com | 123456789 | PT Company 6 | IT Consultant | https://company6.com | 1-250 employees |
+      | full_name          | email               | password  | company_name | company_type  | website               | company_size    |
+      | company tiga puluh | company30@gmail.com | 123456789 | PT Company   | IT Consultant | https://company30.com | 1-250 employees |
 
   Scenario Outline: Register company with invalid input
     Given User already on JobHuntz web
@@ -32,9 +32,8 @@ Feature: Register Company
       | company dua | company2@gmail.com | 123456789 | PT Company 2 |               | https://company2.com | 1-250 employees | company type is required example: Acountant |
       | company dua | company2@gmail.com | 123456789 | PT Company 2 | IT Consultant |                      | 250+ employees  | Invalid url must add http                   |
       | company dua | company2@gmail.com | 123456789 | PT Company 2 | IT Consultant | company2             | 250+ employees  | Invalid url must add http                   |
-      |             |                    |           |              |               |                      |                 | name is required                            |
+      |             |                    |           |              |               |                      | 250+ employees  | name is required                            |
 
-  @RegComp
   Scenario Outline: Register company with duplicate email
     Given User already on JobHuntz web
     When User click Daftar button

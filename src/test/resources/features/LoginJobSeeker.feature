@@ -1,7 +1,7 @@
 @LoginJobSeeker
 Feature: Login Job Seeker
 
-  @TC
+  @Login
   Scenario Outline: Login job seeker with valid input
     Given User already on JobHuntz web
     When User click Daftar button
@@ -12,9 +12,8 @@ Feature: Login Job Seeker
     Then User will successfully login
     Examples:
       | email                | password  |
-      | candidate3@gmail.com | 123456789 |
+      | candidate10@gmail.com | 123456789 |
 
-  @TC
   Scenario Outline: Login job seeker with wrong input
     Given User already on JobHuntz web
     When User click Daftar button
@@ -28,7 +27,6 @@ Feature: Login Job Seeker
       | candidate1@gmail.com | abcabcdf  |
       | candi1@gmail.com     | 123456789 |
 
-  @TC
   Scenario Outline: Login job seeker with empty field
     Given User already on JobHuntz web
     When User click Daftar button
@@ -39,11 +37,10 @@ Feature: Login Job Seeker
     Then User will see message under the field "<message>"
     Examples:
       | email                | password  | message                                |
-      | candidate1@gmail.com |           | Password must be at least 6 characters |
+      | candidate1@gmail.com |           | Password must be at least 8 characters |
       |                      | 123456789 | email is required                      |
       |                      |           | email is required                      |
 
-  @TC
   Scenario Outline: Login job seeker with invalid email
     Given User already on JobHuntz web
     When User click Daftar button

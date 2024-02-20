@@ -26,10 +26,9 @@ public class LoginCompanyStepDef {
     }
 
     @Then("User will successfully login company")
-    public void userWillSuccessfullyLoginCompany() throws InterruptedException {
+    public void userWillSuccessfullyLoginCompany() {
         Assert.assertTrue(loginCompanyPage.setVerifyLoginCompany());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//        Thread.sleep(3000);
     }
 }
 
